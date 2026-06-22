@@ -152,4 +152,59 @@ body.modo-daltonismo {
     --box-rgba: rgba(0, 0, 0, 0.8);
     --detalhe-sakura: #ffeb3b; /* Amarelo vivo substituindo o rosa para destacar no daltonismo */
     filter: saturate(1.2) contrast(1.2);
+}/* --- ESTILOS DOS NOVOS CARDS --- */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: rgba(255, 255, 255, 0.25);
+    border-color: var(--detalhe-sakura);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.card p {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+/* --- ARRUMANDO O MODO DALTONISMO --- */
+/* Substitua ou adicione esta regra no final para uma acessibilidade real */
+body.modo-daltonismo {
+    /* Altera o fundo para cinza-escuro e remove a confusão do fundo verde com as letras brancas */
+    --bg-verde-claro: #263238 !important;
+    --box-rgba: rgba(0, 0, 0, 0.85) !important;
+    --detalhe-sakura: #ffeb3b !important; /* Amarelo de alto contraste */
+    
+    /* Filtro CSS que ajusta as cores da tela (incluindo imagens) para modos de daltonismo severos */
+    filter: grayscale(0.5) contrast(1.4) !important;
+}
+
+body.modo-daltonismo .card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: #ffeb3b;
 }
