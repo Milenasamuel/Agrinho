@@ -50,4 +50,21 @@ function alternarDaltonismo() {
         btn.style.backgroundColor = "white";
         btn.style.color = "#333";
     }
+}function alternarDaltonismo() {
+    const body = document.body;
+    const btn = document.getElementById('btn-daltonismo');
+    
+    body.classList.toggle('modo-daltonismo');
+    
+    if (body.classList.contains('modo-daltonismo')) {
+        btn.innerText = "Desativar Modo Daltonismo";
+        btn.style.backgroundColor = "#ffeb3b";
+        btn.style.color = "#000";
+        btn.style.borderColor = "#000";
+    } else {
+        btn.innerText = "Modo Daltonismo";
+        btn.style.backgroundColor = "white";
+        btn.style.color = "#333";
+        btn.style.borderColor = "var(--detalhe-sakura)";
+    }
 }
