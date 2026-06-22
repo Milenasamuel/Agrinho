@@ -46,29 +46,313 @@
                 <p class="caption">Inovação e sustentabilidade caminhando lado a lado.</p>
             </div>
 
+            <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte, Futuro Sustentável</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- ESTILOS (CSS) --- */
+        :root {
+            --bg-verde-claro: #e8f5e9;
+            --texto-branco: #ffffff;
+            --detalhe-sakura: #ffb7c5;
+            --box-rgba: rgba(46, 125, 50, 0.65); /* Aumentado o contraste para a letra branca ficar super legível */
+            --tamanho-base: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            font-size: var(--tamanho-base);
+            background-color: var(--bg-verde-claro);
+            color: var(--texto-branco);
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Barra de Acessibilidade */
+        .accessibility-bar {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .control-group button {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 600;
+            padding: 8px 15px;
+            border: 2px solid var(--detalhe-sakura);
+            background-color: white;
+            color: #333;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .control-group button:hover {
+            background-color: var(--detalhe-sakura);
+            color: white;
+        }
+
+        /* Camada de Brilho */
+        #overlay-brilho {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: black;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 99;
+            transition: opacity 0.2s ease;
+        }
+
+        /* Flores de Sakura de Fundo */
+        .sakura-bg {
+            position: absolute;
+            font-size: 3rem;
+            opacity: 0.5;
+            user-select: none;
+            z-index: 1;
+        }
+        .s1 { top: 15%; left: 5%; }
+        .s2 { top: 45%; right: 5%; transform: rotate(15deg); }
+        .s3 { bottom: 15%; left: 8%; transform: rotate(-20deg); }
+
+        /* Caixa de Conteúdo */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .content-box {
+            background-color: var(--box-rgba);
+            padding: 40px;
+            border-radius: 25px;
+            border: 3px solid var(--detalhe-sakura);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+        }
+
+        h1, h2 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+        }
+
+        h2 { margin-top: 40px; }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        hr {
+            border: 0;
+            height: 2px;
+            background: var(--detalhe-sakura);
+            margin: 20px 0;
+        }
+
+        /* Imagens */
+        .image-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 4px solid var(--texto-branco);
+        }
+
+        .caption {
+            font-size: 0.9rem;
+            margin-top: 8px;
+            opacity: 0.9;
+        }
+
+        /* Cards Informativos */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.25);
+            border-color: var(--detalhe-sakura);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            margin-bottom: 0;
+            font-weight: 400;
+        }
+
+        /* --- CORREÇÃO DO MODO DALTONISMO --- */
+        body.modo-daltonismo {
+            --bg-verde-claro: #1c2833 !important; /* Fundo escuro de alto contraste */
+            --box-rgba: rgba(0, 0, 0, 0.9) !important;
+            --detalhe-sakura: #ffeb3b !important; /* Elementos em amarelo vivo universal */
+            filter: grayscale(0.2) contrast(1.5) !important; /* Ajuste fino de nitidez */
+        }
+
+        body.modo-daltonismo .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-color: #ffeb3b;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="accessibility-bar">
+        <div class="control-group">
+            <button onclick="alterarFonte(1)">Letra A+</button>
+            <button onclick="alterarFonte(-1)">Letra A-</button>
+        </div>
+        <div class="control-group">
+            <button onclick="alterarBrilho(10)">Brilho +</button>
+            <button onclick="alterarBrilho(-10)">Brilho -</button>
+        </div>
+        <div class="control-group">
+            <button onclick="alternarDaltonismo()" id="btn-daltonismo">Modo Daltonismo</button>
+        </div>
+    </header>
+
+    <div id="overlay-brilho"></div>
+
+    <main class="container">
+        <div class="sakura-bg s1">🌸</div>
+        <div class="sakura-bg s2">🌸</div>
+        <div class="sakura-bg s3">🌸</div>
+
+        <section class="content-box">
+            <h1>Agro Forte, Futuro Sustentável</h1>
+            <p class="subtitle">A harmonia entre a força da nossa terra e a tecnologia de amanhã.</p>
+            
+            <hr>
+
+            <h2>O que é o Agro Forte?</h2>
+            <p>O agronegócio moderno une a robustez da produção no campo com o respeito à biodiversidade. Ser "forte" hoje significa produzir o suficiente para alimentar o mundo, garantindo que os recursos naturais sejam preservados para as próximas gerações.</p>
+            
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=800&q=80" alt="Plantação jovem crescendo sob o sol.">
+                <p class="caption">Inovação e sustentabilidade caminhando lado a lado.</p>
+            </div>
+
             <h2>Tecnologia e Sustentabilidade</h2>
-            <p>Através do uso de inteligência artificial, drones e manejo biológico, o agro sustentável reduz o impacto ambiental, economiza água e protege o solo. O futuro do planeta depende de uma agricultura consciente e tecnológica.</p>
+            <p>Através do uso de inteligência artificial, drones e manejo biológico, o agro sustentável reduz o impacto ambiental, economiza água e protege o solo.</p>
+
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <h3>Eco-Eficiência</h3>
+                    <p>Otimização de recursos para produzir mais com menos impacto.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🛸</div>
+                    <h3>Agro 5.0</h3>
+                    <p>Uso de drones e sensores inteligentes para monitoramento preciso.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <h3>Renovabilidade</h3>
+                    <p>Sistemas integrados que reaproveitam resíduos e protegem o solo.</p>
+                </div>
+            </div>
+
         </section>
     </main>
 
-    <script src="script.js"></script>
+    <script>
+        let tamanhoAtual = 18;
+        function alterarFonte(direcao) {
+            tamanhoAtual += direcao * 2;
+            if (tamanhoAtual < 14) tamanhoAtual = 14;
+            if (tamanhoAtual > 26) tamanhoAtual = 26;
+            document.documentElement.style.setProperty('--tamanho-base', tamanhoAtual + 'px');
+        }
+
+        let opacidadeOverlay = 0;
+        function alterarBrilho(quantidade) {
+            opacidadeOverlay -= (quantidade / 100);
+            if (opacidadeOverlay < 0) opacidadeOverlay = 0;
+            if (opacidadeOverlay > 0.8) opacidadeOverlay = 0.8;
+            document.getElementById('overlay-brilho').style.opacity = opacidadeOverlay;
+        }
+
+        function alternarDaltonismo() {
+            const body = document.body;
+            const btn = document.getElementById('btn-daltonismo');
+            body.classList.toggle('modo-daltonismo');
+            
+            if (body.classList.contains('modo-daltonismo')) {
+                btn.innerText = "Desativar Modo Daltonismo";
+                btn.style.backgroundColor = "#ffeb3b";
+                btn.style.color = "#000";
+            } else {
+                btn.innerText = "Modo Daltonismo";
+                btn.style.backgroundColor = "white";
+                btn.style.color = "#333";
+            }
+        }
+    </script>
 </body>
-</html><div class="cards-container">
-    <div class="card">
-        <div class="card-icon">🌱</div>
-        <h3>Eco-Eficiência</h3>
-        <p>Otimização de recursos para produzir mais com menos impacto ambiental.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-icon">🛸</div>
-        <h3>Agro 5.0</h3>
-        <p>Uso de drones e sensores inteligentes para monitoramento preciso da lavoura.</p>
-    </div>
-
-    <div class="card">
-        <div class="card-icon">🔄</div>
-        <h3>Renovabilidade</h3>
-        <p>Sistemas integrados que reaproveitam resíduos e protegem os lençóis freáticos.</p>
-    </div>
-</div>
+</html>
